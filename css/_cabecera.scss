@@ -4,67 +4,155 @@ $negro: #111111;
 $naranja: #ffb400;
 $naranja-2: #fa5b0f;
 $rojo: #ff0000;
+$gris-oscuro-2: #5c5c5c;
+$gris-menu: #252525;
 
 
 // Anidamiento
 
 .header {
     width: 100vw;
-    height: auto;
+    height: 8rem;
 
-    .wrap{
-        width: 100%;
-        height: 7rem;
+    display: flex;
+    align-items: center;
+
+    .brand{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2.8rem;
+        font-weight: 700;
+
+        flex-grow: 1;
+        flex-basis: 15%;
+    
+        .span{
+            color: $naranja;
+            margin-left: 0rem;
+        }
+    }
+
+    
         
-        display: grid;
-        grid-template-columns: 40% 60%;
-        align-items: center;
 
-        .logo{
-            height: 7rem;
-            padding-left: 5rem;
+    .menu{
+        margin: 0rem;
+        padding: 0rem;
 
-            display: flex;
-            align-items: center;
+        flex-grow: 4;
+        flex-basis: 70%;
+        display: flex;
+        justify-content: space-evenly;
+        
 
-            p{
-                font-size: 2.5rem;
-                font-weight: 700;
-                text-transform: uppercase;
-
-                .span{
-                    color: $naranja;
-                }
-            }
+        .inicio, .usuario, .portafolio, .habilidades, .contacto{
+            color: $blanco;
+            font-size: 2rem;
+            display: none;
         }
 
-        .nav ul{
-            width: 100%;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-
-            
-            li {
-                margin-left: -4rem;
-              
-                a {
-                  color: $blanco;
-                  font-size: 1.8rem;
-                }
-
-                a:hover {
-                    // transform: scaleX(2.0);
-                    // transition: transform 0.3s ease;
-                    color: $naranja;
-                  }
-              }
-              
-              
+        li{
+            transition: all 600ms;
         }
 
+        li:hover{
+            color: $blanco;
+        }
 
+        li a{
+            text-transform: uppercase;
+            color: $naranja;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+    }
+    
+
+    .menu-responsive{
+        color: $blanco;
+        font-size: 3rem;
+        cursor: pointer;
+        display: none;
+
+        flex-grow: 1;
+        flex-basis: 15%;
+
+        #abrir_menu, #cerrar_menu{
+            cursor: pointer;
+        }
     }
 }  
 
+// Responsive - Large devices (desktops, 992px and up)
+@media (max-width: 992px){
+    .header .brand{
+        font-size: 2.6rem;
+    }
+
+    .header .menu li a{
+        font-size: 1.7rem;
+    }
+}
+
+// Responsive Medium devices (tablets, 768px and up)
+@media (max-width: 768px) { 
+    .header {
+        .brand{
+            font-size: 2.4rem;
+            padding-left: 5rem;
+            display: flex;
+            justify-content: flex-start; 
+        }
+
+        .menu {
+            background-color: $gris-menu;
+            width: 100vw;
+            height: 100vh;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(-100%);
+            transition: transform 0.6s ease-in-out; /* Ajusta la duración según tus necesidades */
+            padding-top: 6rem;
+
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            li{
+                width: 100%;
+                border-bottom: 1px solid $negro;
+                padding: 2rem 0rem 2rem 3rem;
+
+                display: flex;
+
+                a{
+                    font-size: 2.5rem;
+
+                    display: flex;
+                }
+                
+                .inicio, .usuario, .portafolio, .habilidades, .contacto{
+                    display: block;
+                    margin-right: 4rem;
+                    font-size: 2.5rem;
+                    cursor: pointer;
+                }
+            }
+        }
+        
+        .mostrar_menu {
+            transform: translateX(0%);
+            transition: transform 0.6s ease-in-out; /* Ajusta la duración según tus necesidades */
+        }
+        
+        .menu-responsive{
+            padding-right: 5rem;
+            z-index: 1;
+
+            display: flex;
+            justify-content: flex-end; 
+        }
+    }
+}

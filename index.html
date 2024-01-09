@@ -2,43 +2,59 @@
 <html lan="es">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portfolio José Pérea</title>
+        <link rel="icon" type="favicon/x-icon" href="img/favicon.ico" />
+
         <meta name="description" content="Página web de portafolio">
 
-        <!-- Normalize -->
-        <link rel="preload" href="css/normalize.css" as="style">
+        <!--Prefetch  -  El navegador carga la sgte página que esperamos que el usuario visite, para darle una mejor experiencia de usuario y sea más rápido-->
+        <link rel="prefetch" href="sobre-mi.html" as="document">
+
+        <!--Preload  -  El navegador carga lo que se requiere inmediatamente--> 
+
+        <!-- <link rel="preload" href="css/normalize.css" as="style"> -->
         <link rel="stylesheet" href="css/normalize.css">
 
-        <!-- Fonts -->
+        <!-- <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" crossorigin="crossorigin" as="font"> -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+        <!-- <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" crossorigin="crossorigin" as="font"> -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        <!-- Stylesheet -->
-        <link rel="preload" href="css/style.css" as="style">
+        <!-- <link rel="preload" href="css/style.css" as="style"> -->
         <link rel="stylesheet" type="text/css" href="css/styles.css" />
     </head>
     <body>
         <!-- Inicio Header -->
         <header class="header">
-            <div class="wrap">
-                <div class="logo">
-                    <p><span class="span">j</span>p</p>
-                </div>
-                <nav class="nav">
-                    <ul>
-                        <li><a href="#">Sobre Mí</a></li>
-                        <li><a href="#">Portafolio</a></li>
-                        <li><a href="#">Habilidades</a></li>
-                        <li><a href="#">Contacto</a></li>
-                    </ul>
-                </nav>
+            <div class="brand">
+                <h2>j<span class="span">p</span></h2>
+            </div>
+            <ul class="menu" id="menu">
+                <li>
+                    <a href="#"><i class="fa-solid fa-house inicio"></i>Home</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-user usuario"></i>Sobre Mí</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-briefcase portafolio"></i>Portafolio</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-list-check habilidades"></i>Habilidades</a>
+                </li>
+                <li> 
+                    <a href="#"><i class="fa-solid fa-phone contacto"></i>Contacto</a>
+                </li>
+            </ul>
+            <div class="menu-responsive" id="menu-responsive">
+                <i class="fa-solid fa-bars" id="abrir_menu"></i>
+                <i class="fa-solid fa-xmark" id="cerrar_menu"></i> 
             </div>
         </header>
         <!-- Fin Header -->
@@ -46,14 +62,16 @@
         <section class="content">
             <!-- Inicio Contenido Principal -->
             <div class="wrap-content">
-                <div class="img-perfil">
-                    <img src="img/gato.jpg"  alt="Imagen de perfil">
+                <div class="perfil">
+                    <div class="img-perfil">
+                        <img loading="lazy" src="img/perfil.jpg"  alt="Imagen de perfil">
+                    </div>
                 </div>
                 <div class="info">
                     <h3 class="hola">Hola !</h3>
                     <h1 class="titulo">Soy <span class="jmp">José Miguel Pérea</span></h1>
                     <p class="info-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus velit enim, egestas eget risus a, tempus fringilla erat. Fusce odio arcu, malesuada eu vehicula quis, accumsan sed justo. 
+                        I'm a Freelance Full Stack Developer based in New York, USA. With 6 years experience as a professional Full Stack Developer, I have acquired the skills necessary to build great and premium websites. 
                     </p>
                     <button class="btn">
                         Más sobre mí
@@ -62,6 +80,9 @@
             </div>
             <!-- Fin Contenido Principal -->
         </section>
+
+        <script src="https://kit.fontawesome.com/8f154ec450.js" crossorigin="anonymous"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>
    
