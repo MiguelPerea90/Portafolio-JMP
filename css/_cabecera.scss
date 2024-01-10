@@ -9,7 +9,6 @@ $gris-menu: #252525;
 
 
 // Anidamiento
-
 .header {
     width: 100vw;
     height: 8rem;
@@ -32,9 +31,6 @@ $gris-menu: #252525;
         }
     }
 
-    
-        
-
     .menu{
         margin: 0rem;
         padding: 0rem;
@@ -51,19 +47,19 @@ $gris-menu: #252525;
             display: none;
         }
 
-        li{
-            transition: all 600ms;
-        }
-
-        li:hover{
-            color: $blanco;
-        }
-
         li a{
             text-transform: uppercase;
             color: $naranja;
             font-size: 1.8rem;
             font-weight: 600;
+        }
+
+        a:hover{
+            color: $blanco;
+        }
+
+        a:hover i{
+            color: $naranja;
         }
     }
     
@@ -129,13 +125,12 @@ $gris-menu: #252525;
 
                 a{
                     font-size: 2.5rem;
-
                     display: flex;
                 }
                 
                 .inicio, .usuario, .portafolio, .habilidades, .contacto{
                     display: block;
-                    margin-right: 4rem;
+                    margin-right: 3rem;
                     font-size: 2.5rem;
                     cursor: pointer;
                 }
@@ -156,3 +151,4 @@ $gris-menu: #252525;
         }
     }
 }
+

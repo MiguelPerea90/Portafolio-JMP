@@ -30,17 +30,17 @@
   font-size: 2rem;
   display: none;
 }
-.header .menu li {
-  transition: all 600ms;
-}
-.header .menu li:hover {
-  color: #ffffff;
-}
 .header .menu li a {
   text-transform: uppercase;
   color: #ffb400;
   font-size: 1.8rem;
   font-weight: 600;
+}
+.header .menu a:hover {
+  color: #ffffff;
+}
+.header .menu a:hover i {
+  color: #ffb400;
 }
 .header .menu-responsive {
   color: #ffffff;
@@ -96,7 +96,7 @@
   }
   .header .menu li .inicio, .header .menu li .usuario, .header .menu li .portafolio, .header .menu li .habilidades, .header .menu li .contacto {
     display: block;
-    margin-right: 4rem;
+    margin-right: 3rem;
     font-size: 2.5rem;
     cursor: pointer;
   }
@@ -145,11 +145,11 @@ a {
 
 .content {
   width: 100vw;
-  height: auto;
+  height: 80vh;
 }
 .content .wrap-content {
   width: min(100%, 120rem); /* = a: width: 90%; max-width:120rem;*/
-  height: 100%;
+  height: auto;
   margin: 4.5rem auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -165,8 +165,8 @@ a {
 .content .wrap-content .perfil .img-perfil {
   width: 32.2rem;
   height: 32.2rem;
-  margin-right: 4.3rem;
-  margin-bottom: 6.5rem;
+  margin-right: 4.4rem;
+  margin-top: 8rem;
   display: flex;
   justify-content: flex-end;
 }
@@ -178,21 +178,21 @@ a {
 }
 .content .wrap-content .info {
   width: 100%;
-  height: 41rem;
+  height: 100%;
+  padding-top: 10.5rem;
   padding-right: 4.7rem;
-  margin-top: 5.5rem;
 }
 .content .wrap-content .info .hola {
   margin-top: 0rem;
   margin-bottom: 0rem;
   color: #eee;
-  font-size: 22px;
-  font-weight: 400;
+  font-size: 2.2rem;
+  font-weight: 600;
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
 }
 .content .wrap-content .info .titulo {
-  font-size: 4.5rem;
+  font-size: 4.2rem;
   line-height: 6.2rem;
   font-weight: 700;
   font-family: "Poppins", sans-serif;
@@ -230,17 +230,31 @@ a {
   cursor: pointer;
 }
 
+@media (max-width: 1200px) {
+  .content .wrap-content .info .titulo {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 1162px) {
+  .content .wrap-content .perfil {
+    padding-bottom: 5rem;
+  }
+  .content .wrap-content .info .titulo {
+    font-size: 3.7rem;
+  }
+}
 @media (max-width: 992px) {
   .content .wrap-content {
-    height: auto;
     margin: 0rem;
     padding: 0rem;
     grid-template-rows: repeat(2, 1fr);
   }
   .content .wrap-content .perfil {
     width: 80%;
+    height: 100%;
     margin: 0rem auto;
     margin-top: 5.8rem;
+    padding-bottom: 0rem;
     grid-column: 1/3;
     justify-content: center;
     align-items: center;
@@ -257,10 +271,13 @@ a {
     flex-direction: column;
     align-items: center;
     width: 80%;
-    height: auto;
+    height: 100%;
     margin: 0rem auto;
     padding: 0rem;
     text-align: center;
+  }
+  .content .wrap-content .info .titulo {
+    font-size: 3.4rem;
   }
   .content .wrap-content .info .hola, .content .wrap-content .info .titulo, .content .wrap-content .info .info-text {
     margin: 0rem;
@@ -269,12 +286,12 @@ a {
 }
 @media (max-width: 768px) {
   .content .wrap-content {
-    background-color: red;
+    max-height: 90vh;
   }
   .content .wrap-content .perfil {
-    background-color: lightgreen;
-    width: 90%;
-    margin-top: 0rem;
+    width: 100%;
+    max-height: 26.5rem;
+    margin-top: 2rem;
   }
   .content .wrap-content .perfil .img-perfil {
     width: 22.2rem;
@@ -283,8 +300,51 @@ a {
     padding: 0rem;
   }
   .content .wrap-content .info {
-    background-color: lightblue;
-    width: 90%;
+    width: 100%;
+    padding: 0rem 2.6rem;
+  }
+  .content .wrap-content .info .titulo {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 600px) {
+  .content .wrap-content {
+    max-height: 70vh;
+  }
+  .content .wrap-content .info .titulo {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 576px) {
+  .content .wrap-content .info {
+    align-items: flex-start;
+  }
+  .content .wrap-content .info .info-text {
+    text-align: start;
+  }
+  .content .wrap-content .info .btn {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 500px) {
+  .content .wrap-content .info .titulo {
+    font-size: 2.8rem;
+  }
+}
+@media (max-width: 400px) {
+  .content .wrap-content .info .hola {
+    font-size: 2rem;
+  }
+  .content .wrap-content .info .titulo {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 330px) {
+  .content .wrap-content .info .hola {
+    font-size: 1.6rem;
+  }
+  .content .wrap-content .info .titulo {
+    font-size: 1.8rem;
   }
 }
 
